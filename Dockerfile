@@ -7,7 +7,7 @@ ARG FIRESTORM_URL=https://downloads.firestormviewer.org/release/linux/Phoenix-Fi
 ADD $FIRESTORM_URL /tmp/firestorm.tar.xz
 
 RUN apt-get update && \
-	apt-get install -y xz-utils && \
+	apt-get install -y libatk1.0-0t64 xz-utils && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
 
