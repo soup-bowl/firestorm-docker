@@ -1,5 +1,5 @@
 services:
-  inkscape:
+  viewer:
     build:
       context: .
       dockerfile: Dockerfile
