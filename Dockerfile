@@ -5,28 +5,9 @@ ARG PLAT=x86_64
 
 RUN apt-get update && \
 	apt-get install -y \
-# 	x11-utils \
-# 	pulseaudio \
-# 	libglu1-mesa \
  	libgtk2.0-0 \
-# 	libdbus-glib-1-2 \
-# 	libnotify4 \
  	gamemode \
-# 	wine64 \
-# #	libi3861 \
-# 	lib32z1 \
-# 	lib32ncurses6 \
-# 	lib32stdc++6 \
-# #	lib32gcc1-s1 \
-# 	libpulse0 \
-# 	libgl1-mesa-dri \
-# 	libx11-dev \
-# 	libxtst6 \
-# 	libxrandr2 \
-# 	libxss1 \
 	libatk1.0-0 \
-	# libcups2 \
-#	libgdk-pixbuf2.0-0 \
 	libvorbisfile3 \
 	xz-utils && \
 	apt-get clean && \
