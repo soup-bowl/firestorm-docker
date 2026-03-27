@@ -10,6 +10,13 @@ Run **[Firestorm Viewer][fs]** in a web-accessible Docker/Podman container, simi
 > [!WARNING]  
 > This is **pre-pre-pre-alpha**. Use at your own risk. There is also a [Singularity Viewer edition](https://github.com/soup-bowl/singularity-docker).
 
+# Supported tags
+
+Version refers to the [Firestorm version](https://wiki.firestormviewer.org/downloads). **Tags outside of this are not updated**
+
+-	[`edge`, `7`, `7.2`](https://github.com/soup-bowl/firestorm-docker/blob/main/build/latest/Dockerfile)
+- [`7.1`](https://github.com/soup-bowl/firestorm-docker/blob/main/build/latest/Dockerfile)
+
 ## Quickstart
 
 > [!IMPORTANT]  
