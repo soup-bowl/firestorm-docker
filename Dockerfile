@@ -23,7 +23,8 @@ COPY /root /
 COPY branding /etc/s6-overlay/s6-rc.d/init-adduser/branding
 
 ENV TITLE="Firestorm Viewer" \
-	NO_DECOR="true"
+	NO_DECOR="true" \
+	RESTART_APP="true"
 
 EXPOSE 3000
 
