@@ -35,6 +35,8 @@ docker run -d \
   ghcr.io/soup-bowl/firestorm-docker:edge
 ```
 
+(append `-opensim` for OpenSimulator support)
+
 Add:
 
 * `-v ./config:/config` for configuration persistence.
