@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - main
+    paths:
+      - Dockerfile
+      - root/**
+      - branding/**
+      - .github/workflows/build.yml
   workflow_dispatch:
 
 jobs:
