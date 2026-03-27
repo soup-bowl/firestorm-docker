@@ -27,6 +27,7 @@ To run the server, use the following command (or [see the Docker Compose file](/
 ```sh
 docker run -d \
   --name firestorm-web \
+  --security-opt seccomp=unconfined # Needed for CEF to function \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=Etc/UTC \
