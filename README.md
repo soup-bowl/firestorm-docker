@@ -8,7 +8,7 @@
 Run **[Firestorm Viewer][fs]** in a web-accessible Docker/Podman container, similar to **Second Life Zero**. Built upon the [Selkies Linuxserver base image][selkies].
 
 > [!WARNING]  
-> This is **pre-pre-pre-alpha**. Use at your own risk.
+> This is **pre-pre-pre-alpha**. Use at your own risk. There is also a [Singularity Viewer edition](https://github.com/soup-bowl/singularity-docker).
 
 ## Quickstart
 
