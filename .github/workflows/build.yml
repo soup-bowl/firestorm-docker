@@ -14,8 +14,10 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - tag: [edge, "7", "7.2", "7.2.3"]
+          - tag: [edge, "7", "7.2"]
             version: 7-2-3-80036
+          - tag: ["7.1"]
+            version: 7-1-13-78266
 
     permissions:
       contents: read
