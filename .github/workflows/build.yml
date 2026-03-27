@@ -10,6 +10,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - tag: [edge, "7", "7.2", "7.2.3"]
+            version: 7-2-3-80036
+
     permissions:
       contents: read
       packages: write
@@ -32,11 +39,38 @@ jobs:
         id: buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Build Container
+      - name: Generate Docker Tags
+        id: meta
+        run: |
+          {
+            echo "sl_tags<<EOF"
+            echo '${{ toJson(matrix.tag) }}' | jq -r '.[] | "ghcr.io/${{ github.repository }}:" + .'
+            echo "EOF"
+            echo "os_tags<<EOF"
+            echo '${{ toJson(matrix.tag) }}' | jq -r '.[] | "ghcr.io/${{ github.repository }}:" + . + "-opensim"'
+            echo "EOF"
+          } >> $GITHUB_OUTPUT
+
+      - name: Build for Second Life
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:edge
+          tags: ${{ steps.meta.outputs.sl_tags }}
+          build-args: |
+            VERSION=${{ matrix.version }}
+            SERVICE=
+          platforms: linux/amd64
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Build for OpenSimulator
+        uses: docker/build-push-action@v5
+        with:
+          push: true
+          tags: ${{ steps.meta.outputs.os_tags }}
+          build-args: |
+            VERSION=${{ matrix.version }}
+            SERVICE=OS
           platforms: linux/amd64
           cache-from: type=gha
           cache-to: type=gha,mode=max
