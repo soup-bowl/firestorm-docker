@@ -24,7 +24,9 @@ COPY branding /etc/s6-overlay/s6-rc.d/init-adduser/branding
 
 ENV TITLE="Firestorm Viewer" \
 	NO_DECOR="true" \
-	HARDEN_OPENBOX="true"
+	HARDEN_OPENBOX="true" \
+	DISABLE_SUDO="true" \
+	DISABLE_TERMINALS="true"
 
 EXPOSE 3000
 
