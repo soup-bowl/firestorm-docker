@@ -26,7 +26,8 @@ ENV TITLE="Firestorm Viewer" \
 	NO_DECOR="true" \
 	HARDEN_OPENBOX="true" \
 	DISABLE_SUDO="true" \
-	DISABLE_TERMINALS="true"
+	DISABLE_TERMINALS="true" \
+	SELKIES_UI_SIDEBAR_SHOW_APPS="false"
 
 EXPOSE 3000
 
