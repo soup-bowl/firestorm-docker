@@ -47,5 +47,12 @@ Add:
 
 This will make an instance available on http://localhost:3000. For further configuration, see the [base image documentation][selkies].
 
+## Run in the Cloud
+
+> [!WARNING]  
+> These are for **experimental purposes only** - Do not use these if you do not understand why a missing auth layer is a security risk.
+
+Vast.ai VM, no auth layer: [Template](https://cloud.vast.ai/?ref_id=453893&creator_id=453893&name=Firestorm%20Viewer%20VM%20(no%20auth%20layer))
+
 [fs]: https://www.firestormviewer.org/
 [selkies]: https://github.com/linuxserver/docker-baseimage-selkies
