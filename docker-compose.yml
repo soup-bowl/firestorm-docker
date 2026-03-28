@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile
     container_name: firestorm
     security_opt:
-      - seccomp:unconfined #optional
+      - seccomp:unconfined
     environment:
       - PUID=1000
       - PGID=1000
