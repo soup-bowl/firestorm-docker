@@ -10,7 +10,7 @@ Run **[Firestorm Viewer][fs]** in a web-accessible Docker/Podman container, simi
 > [!WARNING]  
 > This is **pre-pre-pre-alpha**. Use at your own risk. There is also a [Singularity Viewer edition](https://github.com/soup-bowl/singularity-docker).
 
-# Supported tags
+## Supported tags
 
 Version refers to the [Firestorm version](https://wiki.firestormviewer.org/downloads). **Tags outside of this are not updated**
 
@@ -46,6 +46,10 @@ Add:
   * `--group-add video` may also be needed.
 
 This will make an instance available on http://localhost:3000. For further configuration, see the [base image documentation][selkies].
+
+## Usage Tips
+
+* Fine movements are basically impossible without giving it exclusive mouse lock. Press `Ctrl - Shift - Left Click` to do so, and press `esc` to exit.
 
 ## Run in the Cloud
 
