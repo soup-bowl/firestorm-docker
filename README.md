@@ -27,7 +27,7 @@ To run the server, use the following command (or [see the Docker Compose file](/
 ```sh
 docker run -d \
   --name firestorm-web \
-  --security-opt seccomp=unconfined # Needed for CEF to function \
+  --security-opt seccomp=unconfined \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=Etc/UTC \
@@ -41,7 +41,7 @@ docker run -d \
 Add:
 
 * `-v ./config:/config` for configuration persistence.
-* `--security-opt seccomp=unconfined` for older systems with seccomp issues.
+* `--security-opt seccomp=unconfined` generally needed due to the presence of [CEF](https://github.com/chromiumembedded/cef) in Firestorm - see [#5](https://github.com/soup-bowl/firestorm-docker/issues/5).
 * `--device /dev/dri:/dev/dri` to give the container GPU access.
   * `--group-add video` may also be needed.
 
