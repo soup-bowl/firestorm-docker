@@ -50,6 +50,9 @@ This will make an instance available on http://localhost:3000. For further confi
 ## Usage Tips
 
 * Fine movements are basically impossible without giving it exclusive mouse lock. Press `Ctrl - Shift - Left Click` to do so, and press `esc` to exit.
+* Unless you change the `HARDEN_OPENBOX` env, quitting Firestorm will re-open the application.
+* This application wasn't designed for this, so there can be some unexpected hard crashes - restarting the container is the best action.
+* You can verify if your GPU is being correctly passed-through by doing to **help** > **About Firestorm**, and looking at the **Graphics Card** options.
 
 ## Run in the Cloud
 
