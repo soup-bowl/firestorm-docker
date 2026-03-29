@@ -41,7 +41,7 @@ docker run -d \
 Add:
 
 * `-v ./config:/config` for configuration persistence.
-* `--security-opt seccomp=unconfined` generally needed due to the presence of [CEF](https://github.com/chromiumembedded/cef) in Firestorm - see [#5](https://github.com/soup-bowl/firestorm-docker/issues/5).
+* `--security-opt seccomp=unconfined` generally needed due to the presence of [Dullahan (CEF)](https://github.com/secondlife/dullahan) in Firestorm - see [#5](https://github.com/soup-bowl/firestorm-docker/issues/5).
 * `--device /dev/dri:/dev/dri` to give the container GPU access.
   * `--group-add video` may also be needed.
 
