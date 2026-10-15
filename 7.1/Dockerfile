@@ -1,12 +1,17 @@
+#
+# NOTE: THIS DOCKERFILE IS GENERATED VIA "apply-templates.sh"
+#
+# PLEASE DO NOT EDIT IT DIRECTLY.
+#
+
 FROM ghcr.io/linuxserver/baseimage-selkies:ubuntunoble
 
-ARG VERSION=7-2-3-80036
+ARG VERSION=7.1.13.78266
 ARG EDITION=AVX2
 ARG SERVICE=OS
 
-ARG FIRESTORM_URL=https://downloads.firestormviewer.org/release/linux/Phoenix-Firestorm${SERVICE}-Releasex64_${EDITION}-${VERSION}.tar.xz
-
-RUN apt-get update && \
+RUN FIRESTORM_URL="https://downloads.firestormviewer.org/release/linux/Phoenix-Firestorm${SERVICE}-Releasex64_${EDITION}-$(echo "$VERSION" | tr '.' '-').tar.xz" && \
+	apt-get update && \
 	apt-get install --no-install-recommends -y libatk1.0-0t64 libatk-bridge2.0-0t64 xz-utils curl && \
 	curl -fsSL "$FIRESTORM_URL" -o /tmp/firestorm.tar.xz && \
 	mkdir -p /opt/firestorm-install && \
