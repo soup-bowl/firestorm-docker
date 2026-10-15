@@ -2,7 +2,7 @@ services:
   viewer:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: 7.2/Dockerfile
     container_name: firestorm
     security_opt:
       - seccomp:unconfined

@@ -14,8 +14,8 @@ Run **[Firestorm Viewer][fs]** in a web-accessible Docker/Podman container, simi
 
 Version refers to the [Firestorm version](https://wiki.firestormviewer.org/downloads). **Tags outside of this are not updated**
 
--	[`edge`, `7`, `7.2`](https://github.com/soup-bowl/firestorm-docker/blob/main/build/latest/Dockerfile)
-- [`7.1`](https://github.com/soup-bowl/firestorm-docker/blob/main/build/latest/Dockerfile)
+- [`edge`, `7`, `7.2`, `7.2.4.80712`](https://github.com/soup-bowl/firestorm-docker/blob/main/7.2/Dockerfile)
+- [`7.1`, `7.1.13.78266`](https://github.com/soup-bowl/firestorm-docker/blob/main/7.1/Dockerfile)
 
 ## Quickstart
 
@@ -56,6 +56,15 @@ This will make an instance available on http://localhost:3000. For further confi
 * Unless you change the `HARDEN_OPENBOX` env, quitting Firestorm will re-open the application.
 * This application wasn't designed for this, so there can be some unexpected hard crashes - restarting the container is the best action.
 * You can verify if your GPU is being correctly passed-through by doing to **help** > **About Firestorm**, and looking at the **Graphics Card** options.
+
+## Updating Versions
+
+Versions are defined in [`versions.json`](/versions.json), in a similar style to the [Docker Official Images](https://github.com/docker-library). The per-version Dockerfiles are generated from [`Dockerfile.template`](/Dockerfile.template), so do not edit them directly.
+
+1. Add or bump the entry in `versions.json` (the key is the `major.minor` line, `version` is the full Firestorm version).
+2. Run `./apply-templates.sh` to regenerate the `<version>/Dockerfile` files, and commit the result.
+
+The build workflow reads `versions.json` to decide what to build, and tags each image with its full version and `major.minor`. The newest version of each major also gets the major tag, and the newest overall gets `edge`. Run `./generate-matrix.sh` to preview the tags.
 
 ## Run in the Cloud
 
